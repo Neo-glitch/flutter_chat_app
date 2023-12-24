@@ -50,7 +50,7 @@ class MessageBubble extends StatelessWidget {
         if (userImage != null)
           Positioned(
             top: 15,
-            // Align user image to the right, if the message is from me.
+            // Align user image to the right, if the message is from me, else align to left.
             right: isMe ? 0 : null,
             child: CircleAvatar(
               backgroundImage: NetworkImage(

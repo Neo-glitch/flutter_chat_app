@@ -49,8 +49,8 @@ class _ChatScreenState extends State<ChatScreen> {
             )
           ],
         ),
-        body: Column(
-          children: const [
+        body: const Column(
+          children: [
             // used expaned to make this take as much space as can get vertically
             Expanded(
               child: ChatMessages(),

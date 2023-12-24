@@ -21,7 +21,7 @@ class ChatMessages extends StatelessWidget {
           .orderBy("createdAt", descending: true)
           .snapshots(),
       builder: (ctx, chatSnapshot) {
-        if (chatSnapshot.connectionState == ConnectionTask) {
+        if (chatSnapshot.connectionState == ConnectionState.waiting) {
           return const Center(
             child: CircularProgressIndicator(),
           );
@@ -48,8 +48,8 @@ class ChatMessages extends StatelessWidget {
             reverse: true, // first item is last item on list using this
             itemBuilder: (ctx, index) {
               final chatMessage = loadedMessages[index].data();
-              // print("list index: $index");
-              // print("list index: $chatMessage");
+              print("list index: $index");
+              print("list index: $chatMessage");
               // if there is a next message get the next chatMessage else return null
               final nextChatMessage = index + 1 < loadedMessages.length
                   ? loadedMessages[index + 1].data()
